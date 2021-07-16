@@ -1,0 +1,163 @@
+@media screen and (min-width: 768px) {
+    nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .mainNav {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+    }
+
+    .navbar-toggle {
+        display: none;
+    }
+}
+@media screen and (max-width: 1024px) {
+    .grid-container-detail {
+        display: block;
+        grid-template-columns: auto;
+        grid-template-rows: auto auto auto;
+    }
+    .grid-container-review {
+        grid-template-columns: 320px 320px;
+        grid-template-rows: auto auto auto;
+    }
+    .grid-container-favorite {
+        grid-template-columns: auto auto;
+        justify-content: center;
+    }
+    .poster {
+        width: 60%;
+        padding-top: 25px;
+    }
+    .rating {
+        text-align: left;
+        padding: 0 25px;
+        padding-top: 8px;
+    }
+    .itemdetail3 {
+        padding: 25px;
+    }
+    .modal-content {
+        width: 40%;
+    }
+
+}
+@media screen and (max-width: 975px) {
+    .jumbotron img {
+        width: auto;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .grid-container {
+        grid-template-columns: auto auto;
+        grid-template-rows: auto auto;
+        text-align: center;
+    }
+
+    nav .brand {
+        font-size: 21px;
+        padding: 10px 30px;
+    }
+
+    .tekstron {
+        margin-left: 30px;
+        padding-right: 150px;
+        text-align: left;
+    }
+
+    .tekstron button {
+        margin-left: 2px;
+    }
+
+    .jumbotron {
+        height: 100%;
+    }
+
+    .bluring {
+        height: 100%;
+    }
+    .detailblok {
+        padding: 50px 30px;
+    }
+    .poster {
+        width: 70%;
+    }
+    .modal-content {
+        width: 60%;
+    }
+}
+@media screen and (max-width: 696px) {
+    .grid-container-review, .grid-container-satu, .grid-container-dua {
+        grid-template-columns: 350px;
+        grid-template-rows: auto auto auto;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .grid-container-favorite {
+        grid-template-columns: auto;
+        justify-content: center;
+    }
+    .tekstron {
+        margin-left: 30px;
+        text-align: left;
+    }
+
+    nav .brand {
+        font-size: 20px;
+    }
+
+    .tekstron button {
+        margin-left: 2px;
+    }
+
+    .jumbotron {
+        height: 100%;
+    }
+
+    .bluring {
+        height: 100%;
+    }
+    .detailblok {
+        padding: 40px 20px;
+    }
+    .poster {
+        width: 80%;
+    }
+    .modal-content {
+        width: 80%;
+    }
+}
+
+@media screen and (max-width: 468px) {
+    .grid-container {
+        grid-template-columns: auto;
+        grid-template-rows: auto auto;
+        text-align: center;
+    }
+    .menu .drink, .menu .food {
+        padding-right: 35px;
+    }
+
+    .tekstron button {
+        margin-left: 2px;
+    }
+
+    nav .brand {
+        font-size: 18px;
+    }
+    .cariblok {
+        padding-right: 20px;
+    }
+    .tekstron {
+        margin-top: -150px;
+    }
+    .cari {
+        margin-top: 15px;
+    }
+}
