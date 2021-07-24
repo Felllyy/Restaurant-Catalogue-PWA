@@ -1,28 +1,26 @@
+/* eslint-disable no-new */
 import FavoriteRestaurantIdb from '../../data/favorite-restaurant-idb';
-import { createRestaurantsItemTemplate } from '../templates/template-creator';
+import FavoriteRestaurantSearchView from './liked-restaurant/favorite-restaurant-search-view';
+import FavoriteRestaurantShowPresenter from './liked-restaurant/favorite-restaurant-show-presenter';
+import FavoriteRestaurantSearchPresenter from './liked-restaurant/favorite-restaurant-search-presenter';
+
+const view = new FavoriteRestaurantSearchView();
 
 const Favorite = {
   async render() {
-    return `
-    <div>
-      <p class="headline restoblok headFav" tabindex="0">Favorite Restaurant</p>
-      <span class="section-separator"></span>
-    </div>
-    <div class="item">
-    <div class="explore" id="favorite"></div>
-    </div>
-    `;
+    return view.getTemplate();
   },
 
   async afterRender() {
-    const restaurantFavorite = await FavoriteRestaurantIdb.getAllMovies();
-    const restaurantContainer = document.querySelector('#favorite');
-    restaurantFavorite.forEach((restaurants) => {
-      restaurantContainer.innerHTML += createRestaurantsItemTemplate(restaurants);
-    });
+    new FavoriteRestaurantShowPresenter({ view, favoriteRestaurants: FavoriteRestaurantIdb });
+    new FavoriteRestaurantSearchPresenter({ view, favoriteRestaurants: FavoriteRestaurantIdb });
+
+    const favoriteRestaurants = await FavoriteRestaurantIdb.getAllRestaurants();
+    console.log(favoriteRestaurants);
+    const restaurantContainer = document.querySelector('.favorite');
 
     // grid favorite
-    if (restaurantFavorite.length <= 2) {
+    if (favoriteRestaurants.length <= 2) {
       restaurantContainer.classList.add('grid-container-favorite');
     } else {
       restaurantContainer.classList.add('grid-container');

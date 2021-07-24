@@ -1,75 +1,76 @@
-/* eslint-disable import/no-unresolved */
-/* eslint-disable import/extensions */
-Object.defineProperty(exports, '__esModule', {
-  value: true,
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
 });
-exports.default = void 0;
+exports["default"] = void 0;
 
-const _urlParser = _interopRequireDefault(require('../../routes/url-parser'));
+var _urlParser = _interopRequireDefault(require("../../routes/url-parser"));
 
-const _therestaurantdbSource = _interopRequireDefault(require('../../data/therestaurantdb-source'));
+var _therestaurantdbSource = _interopRequireDefault(require("../../data/therestaurantdb-source"));
 
-const _likeButtonInitiator = _interopRequireDefault(require('../../utils/like-button-initiator'));
+var _likeButtonPresenter = _interopRequireDefault(require("../../utils/like-button-presenter"));
 
-const _reviewUpdate = _interopRequireDefault(require('../../utils/review-update'));
+var _reviewUpdate = _interopRequireDefault(require("../../utils/review-update"));
 
-const _templateCreator = require('../templates/template-creator');
+var _favoriteRestaurantIdb = _interopRequireDefault(require("../../data/favorite-restaurant-idb"));
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+var _templateCreator = require("../templates/template-creator");
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 /* eslint-disable linebreak-style */
-const Detail = {
+var Detail = {
   render: function render() {
-    return regeneratorRuntime.async((_context) => {
+    return regeneratorRuntime.async(function render$(_context) {
       while (1) {
         switch (_context.prev = _context.next) {
           case 0:
-            return _context.abrupt('return', '\n    <div id="detailItem" class="detailblok"></div>\n    <div id="likeButtonContainer"></div>\n\n    <div id="mdl" class="modal">\n      <form class="modal-content">\n        <h2 class="headline">Tambah Ulasan</h2>\n        <span class="close">&times;</span>\n        <label for="inName">Nama</label>\n        <input name="inName" type="text" class="namaReviewer" id="inName" placeholder="Masukkan nama">\n        <label for="inReview">Ulasan</label>\n        <textarea name="inReview" class="isiReview" id="inReview" placeholder="Tambahkan review"></textarea>\n        <button type="submit" class="btnSubmit">Kirim</button>\n      </form>\n    </div>\n    </div>\n    <div id="review" class="reviewblok"></div>\n    ');
+            return _context.abrupt("return", "\n    <div id=\"detailItem\" class=\"detailblok\"></div>\n    <div id=\"likeButtonContainer\"></div>\n\n    <div id=\"mdl\" class=\"modal\">\n      <form class=\"modal-content\">\n        <h2 class=\"headline\">Tambah Ulasan</h2>\n        <span class=\"close\">&times;</span>\n        <label for=\"inName\">Nama</label>\n        <input name=\"inName\" type=\"text\" class=\"namaReviewer\" id=\"inName\" placeholder=\"Masukkan nama\">\n        <label for=\"inReview\">Ulasan</label>\n        <textarea name=\"inReview\" class=\"isiReview\" id=\"inReview\" placeholder=\"Tambahkan review\"></textarea>\n        <button type=\"submit\" class=\"btnSubmit\">Kirim</button>\n      </form>\n    </div>\n    </div>\n    <div id=\"review\" class=\"reviewblok\"></div>\n    ");
 
           case 1:
-          case 'end':
+          case "end":
             return _context.stop();
         }
       }
     });
   },
   afterRender: function afterRender() {
-    let url; let restaurantDetail; let detailContainer; let categoriContainer; let foodContainer; let drinkContainer; let ratings; let starTotal; let starPercentage; let reviewContainer; let modal; let btn; let span; let btnSubmit; let nameIn; let
-      reviewIn;
-    return regeneratorRuntime.async((_context2) => {
+    var url, restaurantDetail, detailContainer, categoriContainer, foodContainer, drinkContainer, ratings, starTotal, starPercentage, reviewContainer, modal, btn, span, btnSubmit, nameIn, reviewIn;
+    return regeneratorRuntime.async(function afterRender$(_context2) {
       while (1) {
         switch (_context2.prev = _context2.next) {
           case 0:
             // Fungsi ini akan dipanggil setelah render()
-            url = _urlParser.default.parseActiveUrlWithoutCombiner();
+            url = _urlParser["default"].parseActiveUrlWithoutCombiner();
             _context2.next = 3;
-            return regeneratorRuntime.awrap(_therestaurantdbSource.default.detailRestaurants(url.id));
+            return regeneratorRuntime.awrap(_therestaurantdbSource["default"].detailRestaurants(url.id));
 
           case 3:
             restaurantDetail = _context2.sent;
             detailContainer = document.querySelector('#detailItem');
             detailContainer.innerHTML = (0, _templateCreator.createRestaurantsDetailTemplate)(restaurantDetail.restaurant);
             categoriContainer = document.querySelector('#categori');
-            restaurantDetail.restaurant.categories.forEach((restaurant) => {
-              categoriContainer.innerHTML += '<p>'.concat(restaurant.name, '</p>');
+            restaurantDetail.restaurant.categories.forEach(function (restaurant) {
+              categoriContainer.innerHTML += "<p>".concat(restaurant.name, "</p>");
             });
             foodContainer = document.querySelector('#food');
-            restaurantDetail.restaurant.menus.foods.forEach((restaurant) => {
-              foodContainer.innerHTML += '<p>- '.concat(restaurant.name, '</p>');
+            restaurantDetail.restaurant.menus.foods.forEach(function (restaurant) {
+              foodContainer.innerHTML += "<p>- ".concat(restaurant.name, "</p>");
             });
             drinkContainer = document.querySelector('#drink');
-            restaurantDetail.restaurant.menus.drinks.forEach((restaurant) => {
-              drinkContainer.innerHTML += '<p>- '.concat(restaurant.name, '</p>');
+            restaurantDetail.restaurant.menus.drinks.forEach(function (restaurant) {
+              drinkContainer.innerHTML += "<p>- ".concat(restaurant.name, "</p>");
             }); // rating
 
             ratings = restaurantDetail.restaurant.rating;
             starTotal = 5; // eslint-disable-next-line prefer-template
 
-            starPercentage = `${ratings / starTotal * 100}%`;
+            starPercentage = ratings / starTotal * 100 + '%';
             document.querySelector('.rating .stars-inner').style.width = starPercentage; // reviews
 
             reviewContainer = document.querySelector('#review');
-            restaurantDetail.restaurant.customerReviews.forEach((restaurant) => {
+            restaurantDetail.restaurant.customerReviews.forEach(function (restaurant) {
               reviewContainer.innerHTML += (0, _templateCreator.createRestaurantsReviewTemplate)(restaurant);
             }); // css grid review
 
@@ -80,6 +81,7 @@ const Detail = {
             } else {
               reviewContainer.classList.add('grid-container-review');
             } // add review
+
 
             modal = document.getElementById('mdl');
             btn = document.getElementById('btn');
@@ -99,10 +101,11 @@ const Detail = {
               }
             }; // review
 
+
             btnSubmit = document.querySelector('.btnSubmit');
             nameIn = document.querySelector('#inName');
             reviewIn = document.querySelector('#inReview');
-            btnSubmit.addEventListener('click', (e) => {
+            btnSubmit.addEventListener('click', function (e) {
               e.preventDefault();
 
               if (nameIn.value === '' || reviewIn.value === '') {
@@ -111,15 +114,16 @@ const Detail = {
                 nameIn.value = '';
                 reviewIn.value = '';
               } else {
-                (0, _reviewUpdate.default)(url, nameIn.value, reviewIn.value);
+                (0, _reviewUpdate["default"])(url, nameIn.value, reviewIn.value);
                 nameIn.value = '';
                 reviewIn.value = '';
                 modal.style.display = 'none';
               }
             }); // likebutton
 
-            _likeButtonInitiator.default.init({
+            _likeButtonPresenter["default"].init({
               likeButtonContainer: document.querySelector('#likeButtonContainer'),
+              favoriteRestaurants: _favoriteRestaurantIdb["default"],
               restaurant: {
                 id: restaurantDetail.restaurant.id,
                 name: restaurantDetail.restaurant.name,
@@ -127,17 +131,17 @@ const Detail = {
                 rating: restaurantDetail.restaurant.rating,
                 address: restaurantDetail.restaurant.address,
                 city: restaurantDetail.restaurant.city,
-                description: restaurantDetail.restaurant.description,
-              },
+                description: restaurantDetail.restaurant.description
+              }
             });
 
           case 30:
-          case 'end':
+          case "end":
             return _context2.stop();
         }
       }
     });
-  },
+  }
 };
-const _default = Detail;
-exports.default = _default;
+var _default = Detail;
+exports["default"] = _default;

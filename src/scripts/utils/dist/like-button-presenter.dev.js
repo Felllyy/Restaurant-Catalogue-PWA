@@ -9,15 +9,15 @@ var _templateCreator = require("../views/templates/template-creator");
 
 var LikeButtonPresenter = {
   init: function init(_ref) {
-    var likeButtonContainer, FavoriteRestaurant, data;
+    var likeButtonContainer, favoriteRestaurants, restaurant;
     return regeneratorRuntime.async(function init$(_context) {
       while (1) {
         switch (_context.prev = _context.next) {
           case 0:
-            likeButtonContainer = _ref.likeButtonContainer, FavoriteRestaurant = _ref.FavoriteRestaurant, data = _ref.data;
+            likeButtonContainer = _ref.likeButtonContainer, favoriteRestaurants = _ref.favoriteRestaurants, restaurant = _ref.restaurant;
             this._likeButtonContainer = likeButtonContainer;
-            this._favoriteRestaurants = FavoriteRestaurant;
-            this._restaurant = data.restaurants;
+            this._favoriteRestaurants = favoriteRestaurants;
+            this._restaurant = restaurant;
             _context.next = 6;
             return regeneratorRuntime.awrap(this._renderButton());
 

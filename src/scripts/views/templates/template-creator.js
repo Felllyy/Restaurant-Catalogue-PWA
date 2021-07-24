@@ -3,7 +3,7 @@ import CONFIG from '../../globals/config';
 const createRestaurantsDetailTemplate = (restaurant) => `
 <div class="grid-container-detail">
     <div class="titleDetail" id="titleDetail">
-      <h2 class="headline headdetail">${restaurant.name}</h2>
+      <h2 class="restaurant__name headline headdetail">${restaurant.name}</h2>
       <span class="section-separator headSeparator"></span>
       <div class="categories">
         <p>Kategori: </p>
@@ -63,29 +63,29 @@ const createRestaurantsReviewTemplate = (restaurant) => `
 const createRestaurantsItemTemplate = (restaurants) => `
  <div class="resto-item">
           <div class="foto-blok">
-            <img class="foto" src="${CONFIG.BASE_IMAGE_URL + restaurants.pictureId}" alt="${restaurants.name}" />
+            <img class="foto" src="${CONFIG.BASE_IMAGE_URL + restaurants.pictureId}" alt="${restaurants.name || '-'}" />
             <div class="kota">
-                <span>${restaurants.city}</span>
+                <span>${restaurants.city || '-'}</span>
             </div>
             </a>
           </div>
           <div class="deskripsi">
             <p class="rate" tabindex="0"    >
-              Rating <span>${restaurants.rating}</span>
+              Rating <span>${restaurants.rating || '-'}</span>
             </p>
-            <div id="detailContent"><a class="name" href="#/detail/${restaurants.id}" tabindex="0">${restaurants.name}</a></div>
-            <p class="desc">${restaurants.description}</p>
+            <div id="detailContent" class="restaurant__name"><a class="name" href="#/detail/${restaurants.id}" tabindex="0">${restaurants.name || '-'}</a></div>
+            <p class="desc">${restaurants.description || '-'}</p>
           </div>
         </div>
   `;
-const createLikeButtonTemplate = () => `
-  <button aria-label="like this movie" id="likeButton" class="like">
+const createLikeRestaurantButtonTemplate = () => `
+  <button aria-label="like this restaurant" id="likeButton" class="like">
      <i class="fa fa-heart-o" aria-hidden="true"></i>
   </button>
 `;
 
-const createLikedButtonTemplate = () => `
-  <button aria-label="unlike this movie" id="likeButton" class="like">
+const createUnlikeRestaurantButtonTemplate = () => `
+  <button aria-label="unlike this restaurant" id="likeButton" class="like">
     <i class="fa fa-heart" aria-hidden="true"></i>
   </button>
 `;
@@ -94,6 +94,6 @@ export {
   createRestaurantsItemTemplate,
   createRestaurantsDetailTemplate,
   createRestaurantsReviewTemplate,
-  createLikeButtonTemplate,
-  createLikedButtonTemplate,
+  createLikeRestaurantButtonTemplate,
+  createUnlikeRestaurantButtonTemplate,
 };

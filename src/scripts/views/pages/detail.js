@@ -1,8 +1,9 @@
 /* eslint-disable linebreak-style */
 import UrlParser from '../../routes/url-parser';
 import TheRestaurantsDbSource from '../../data/therestaurantdb-source';
-import LikeButtonInitiator from '../../utils/like-button-initiator';
+import LikeButtonPresenter from '../../utils/like-button-presenter';
 import reviewUpdate from '../../utils/review-update';
+import FavoriteRestaurantIdb from '../../data/favorite-restaurant-idb';
 import { createRestaurantsDetailTemplate, createRestaurantsReviewTemplate } from '../templates/template-creator';
 
 const Detail = {
@@ -104,8 +105,9 @@ const Detail = {
       }
     });
     // likebutton
-    LikeButtonInitiator.init({
+    LikeButtonPresenter.init({
       likeButtonContainer: document.querySelector('#likeButtonContainer'),
+      favoriteRestaurants: FavoriteRestaurantIdb,
       restaurant: {
         id: restaurantDetail.restaurant.id,
         name: restaurantDetail.restaurant.name,
