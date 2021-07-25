@@ -25,6 +25,8 @@ var MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 var CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 
+var UglifyJsPlugin = require('uglifyjs-webpack-plugin');
+
 var path = require('path');
 
 module.exports = {
@@ -40,7 +42,7 @@ module.exports = {
     }]
   },
   optimization: {
-    minimizer: [new CssMinimizerPlugin()],
+    minimizer: [new CssMinimizerPlugin(), new UglifyJsPlugin()],
     splitChunks: {
       chunks: 'all',
       minSize: 20000,
