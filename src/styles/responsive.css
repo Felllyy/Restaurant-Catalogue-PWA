@@ -49,6 +49,7 @@
 @media screen and (max-width: 975px) {
     .jumbotron img {
         width: auto;
+        height: 100%;
     }
 }
 
@@ -74,7 +75,7 @@
         margin-left: 2px;
     }
 
-    .jumbotron {
+    .jumbotron img {
         height: 100%;
     }
 
@@ -116,7 +117,7 @@
         margin-left: 2px;
     }
 
-    .jumbotron {
+    .jumbotron img {
         height: 100%;
     }
 
@@ -139,6 +140,9 @@
         grid-template-columns: auto;
         grid-template-rows: auto auto;
         text-align: center;
+    }
+    .reviewBlok {
+        display: block !important;
     }
     .menu .drink, .menu .food {
         padding-right: 35px;

@@ -1,11 +1,11 @@
-import { createRestaurantsItemTemplate } from '../../templates/template-creator';
+import template from '../../templates/template-creator';
 
 class FavoriteRestaurantSearchView {
   getTemplate() {
     return `
        <div class="content">
        <h2 class="content__heading" >Favorite Restaurants</h2>
-       <input id="query" class="caribox" type="text" placeholder="Cari">
+       <input id="query" class="caribox" type="text" placeholder="Cari restoran">
            <div id="restaurants" class="restaurants favorite"></div>
        </div>
        `;
@@ -24,7 +24,7 @@ class FavoriteRestaurantSearchView {
   showFavoriteRestaurants(restaurants = []) {
     let html;
     if (restaurants.length) {
-      html = restaurants.reduce((carry, restaurant) => carry.concat(createRestaurantsItemTemplate(restaurant)), '');
+      html = restaurants.reduce((carry, restaurant) => carry.concat(template.createRestaurantsItemTemplate(restaurant)), '');
     } else {
       html = this._getEmptyRestaurantTemplate();
     }

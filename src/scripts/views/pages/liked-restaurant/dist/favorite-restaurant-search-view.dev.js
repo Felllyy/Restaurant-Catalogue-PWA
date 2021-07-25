@@ -5,7 +5,9 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports["default"] = void 0;
 
-var _templateCreator = require("../../templates/template-creator");
+var _templateCreator = _interopRequireDefault(require("../../templates/template-creator"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -23,7 +25,7 @@ function () {
   _createClass(FavoriteRestaurantSearchView, [{
     key: "getTemplate",
     value: function getTemplate() {
-      return "\n       <div class=\"content\">\n       <h2 class=\"content__heading\" >Favorite Restaurants</h2>\n       <input id=\"query\" class=\"caribox\" type=\"text\" placeholder=\"Cari\">\n           <div id=\"restaurants\" class=\"restaurants favorite\"></div>\n       </div>\n       ";
+      return "\n       <div class=\"content\">\n       <h2 class=\"content__heading\" >Favorite Restaurants</h2>\n       <input id=\"query\" class=\"caribox\" type=\"text\" placeholder=\"Cari restoran\">\n           <div id=\"restaurants\" class=\"restaurants favorite\"></div>\n       </div>\n       ";
     }
   }, {
     key: "runWhenUserIsSearching",
@@ -45,7 +47,7 @@ function () {
 
       if (restaurants.length) {
         html = restaurants.reduce(function (carry, restaurant) {
-          return carry.concat((0, _templateCreator.createRestaurantsItemTemplate)(restaurant));
+          return carry.concat(_templateCreator["default"].createRestaurantsItemTemplate(restaurant));
         }, '');
       } else {
         html = this._getEmptyRestaurantTemplate();

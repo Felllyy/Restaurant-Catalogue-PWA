@@ -1,12 +1,21 @@
 import TheRestaurantsDbSource from '../../data/therestaurantdb-source';
-import { createRestaurantsItemTemplate } from '../templates/template-creator';
+import template from '../templates/template-creator';
 
 const Home = {
   async render() {
     return `
     <div class="jumbotron">
         <div class="bluring"></div>
-        <img src="hero-image_2.jpg" width="100%" alt="Hero image">
+        <picture>
+          <source type="image/webp" media="(max-width: 600px)" srcset="./images/hero-image_2.webp">
+          <source type="image/jpeg" media="(max-width: 600px)" srcset="./images/hero-image_2.jpg">
+          <img class="lazyload"
+            data-src='./images/hero-image_2.jpg' 
+            alt="Gambar jumbotron"
+            width="1350px"
+            height="900px">
+          </img>
+        </picture>
         <div class="tekstron">
             <h1 tabindex="0">Hayu ah urang taruang</h1>
             <p tabindex="0">Mangga dieksplor hela restona</p>
@@ -28,7 +37,7 @@ const Home = {
     const restaurant = await TheRestaurantsDbSource.homeRestaurants();
     const restaurantContainer = document.querySelector('#posts');
     restaurant.forEach((restaurants) => {
-      restaurantContainer.innerHTML += createRestaurantsItemTemplate(restaurants);
+      restaurantContainer.innerHTML += template.createRestaurantsItemTemplate(restaurants);
     });
   },
 };

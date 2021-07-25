@@ -4,7 +4,7 @@ import TheRestaurantsDbSource from '../../data/therestaurantdb-source';
 import LikeButtonPresenter from '../../utils/like-button-presenter';
 import reviewUpdate from '../../utils/review-update';
 import FavoriteRestaurantIdb from '../../data/favorite-restaurant-idb';
-import { createRestaurantsDetailTemplate, createRestaurantsReviewTemplate } from '../templates/template-creator';
+import template from '../templates/template-creator';
 
 const Detail = {
   async render() {
@@ -23,7 +23,6 @@ const Detail = {
         <button type="submit" class="btnSubmit">Kirim</button>
       </form>
     </div>
-    </div>
     <div id="review" class="reviewblok"></div>
     `;
   },
@@ -32,7 +31,7 @@ const Detail = {
     const url = UrlParser.parseActiveUrlWithoutCombiner();
     const restaurantDetail = await TheRestaurantsDbSource.detailRestaurants(url.id);
     const detailContainer = document.querySelector('#detailItem');
-    detailContainer.innerHTML = createRestaurantsDetailTemplate(restaurantDetail.restaurant);
+    detailContainer.innerHTML = template.createRestaurantsDetailTemplate(restaurantDetail.restaurant);
 
     const categoriContainer = document.querySelector('#categori');
     restaurantDetail.restaurant.categories.forEach((restaurant) => {
@@ -57,7 +56,7 @@ const Detail = {
     // reviews
     const reviewContainer = document.querySelector('#review');
     restaurantDetail.restaurant.customerReviews.forEach((restaurant) => {
-      reviewContainer.innerHTML += createRestaurantsReviewTemplate(restaurant);
+      reviewContainer.innerHTML += template.createRestaurantsReviewTemplate(restaurant);
     });
 
     // css grid review

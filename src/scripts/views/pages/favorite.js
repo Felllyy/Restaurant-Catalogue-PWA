@@ -16,7 +16,6 @@ const Favorite = {
     new FavoriteRestaurantSearchPresenter({ view, favoriteRestaurants: FavoriteRestaurantIdb });
 
     const favoriteRestaurants = await FavoriteRestaurantIdb.getAllRestaurants();
-    console.log(favoriteRestaurants);
     const restaurantContainer = document.querySelector('.favorite');
 
     // grid favorite

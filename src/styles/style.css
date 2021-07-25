@@ -23,27 +23,31 @@ div[tabindex="0"]:focus {
     z-index: 4;
 }
 /* content favorite*/
-.content {
-    padding-top: 100px;
+.favorite {
+    margin: 0 20px;
 }
 .caribox {
     display: block;
     background-color: transparent;
-    border: 1px solid #a52a2a;
+    border: 1px solid #830E0E;
     border-radius: 5px;
     padding: 5px;
     margin: 0 auto;
     margin-bottom: 20px;
 }
+
 .caribox::placeholder {
     color: rgb(83, 83, 83);
+}
+.content {
+    padding-top: 100px;
 }
 .content__heading {
     padding: 20px 0 15px 0;
     font-size: 25px;
     font-weight: bold;
     text-align: center;
-    color: #a52a2a;
+    color: #830E0E;
 }
 
 /* css grid */
@@ -118,7 +122,7 @@ header {
     z-index: 110;
 }
 nav {
-    background-color: #a52a2a;
+    background-color: #830E0E;
 }
 
 nav a {
@@ -185,6 +189,9 @@ nav .brand {
     background-size: cover;
     position: relative;
 }
+.jumbotron img {
+    width: 100%;
+}
 
 .bluring {
     width: 100%;
@@ -210,17 +217,14 @@ nav .brand {
 .tekstron p {
     margin-top: 10px;
 }
-.cariblok {
-    height: 50px;
-    margin-top: 35px;
-}
+
 .tekstron .cari {
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
     padding: 15px 30px;
     color: black;
-    background-color: rgb(240, 173, 29);
+    background-color: #f0ad1d;
     border-radius: 4px;
     line-height: 26px;
     margin-top: 40px;
@@ -229,20 +233,12 @@ nav .brand {
 }
 
 .tekstron .cari:hover {
-    background-color: rgb(197, 140, 15);
-    border-color: rgb(197, 140, 15);
+    background-color: #c58c0f;
+    border-color: #c58c0f;
 }
 
 .diactive {
     display: none;
-}
-
-.inCari {
-    height: 100%;
-    border-radius: 6px;
-    text-decoration: none;
-    border: none;
-    padding-left: 15px;
 }
 
 /* explore */
@@ -251,7 +247,7 @@ nav .brand {
     font-size: 25px;
     font-weight: bold;
     text-align: center;
-    color: #a52a2a;
+    color: #830E0E;
 }
 .restoblok {
     padding-bottom: 5px;
@@ -281,7 +277,7 @@ nav .brand {
 .kota {
     position: absolute;
     color: white;
-    background-color: rgba(165, 42, 42, 0.5);
+    background-color: rgba(165, 42, 42);
     padding: 5px 15px;
     top: 15px;
 }
@@ -298,12 +294,12 @@ nav .brand {
 
 .rate span {
     text-decoration: none;
-    color: brown;
+    color: #830E0E;
 }
 
 .name {
     display: inline-block;
-    color: brown;
+    color: #830E0E;
     text-decoration: none;
     font-size: 23px;
     font-weight: bold;
@@ -523,7 +519,7 @@ nav .brand {
 
 .testimonials-avatar h3 {
     font-weight: 600;
-    color: #7d93b2;
+    color: #526074;
     font-size: 18px;
 }
 
@@ -563,7 +559,7 @@ nav .brand {
 }
 
 .testimonials-text p {
-    color: #878c9f;
+    color: #5d637c;
     font-size: 14px;
     font-family: Georgia, "Times New Roman", Times, serif;
     font-style: italic;
@@ -585,7 +581,7 @@ nav .brand {
     position: fixed;
     bottom: 20px;
     right: 20px;
-    background-color: #a52a2a;
+    background-color: #830E0E;
     color: white;
     border: 0;
     border-radius: 50%;
@@ -599,7 +595,7 @@ nav .brand {
 }
 /* add review modal */
 .tombol {
-    background-color: #a52a2a;
+    background-color: #830E0E;
     border: none;
     color: white;
     padding: 15px 20px;
@@ -667,7 +663,7 @@ nav .brand {
 .btnSubmit {
     padding: 14px;
     text-decoration: none;
-    background-color: brown;
+    background-color: #830E0E;
     color: white;
     border: none;
     border-radius: 2px;

@@ -5,7 +5,9 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports["default"] = void 0;
 
-var _templateCreator = require("../views/templates/template-creator");
+var _templateCreator = _interopRequireDefault(require("../views/templates/template-creator"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 var LikeButtonPresenter = {
   init: function init(_ref) {
@@ -82,7 +84,7 @@ var LikeButtonPresenter = {
   _renderLike: function _renderLike() {
     var _this = this;
 
-    this._likeButtonContainer.innerHTML = (0, _templateCreator.createLikeRestaurantButtonTemplate)();
+    this._likeButtonContainer.innerHTML = _templateCreator["default"].createLikeRestaurantButtonTemplate();
     var likeButton = document.querySelector('#likeButton');
     likeButton.addEventListener('click', function _callee() {
       return regeneratorRuntime.async(function _callee$(_context4) {
@@ -106,7 +108,7 @@ var LikeButtonPresenter = {
   _renderLiked: function _renderLiked() {
     var _this2 = this;
 
-    this._likeButtonContainer.innerHTML = (0, _templateCreator.createUnlikeRestaurantButtonTemplate)();
+    this._likeButtonContainer.innerHTML = _templateCreator["default"].createUnlikeRestaurantButtonTemplate();
     var likeButton = document.querySelector('#likeButton');
     likeButton.addEventListener('click', function _callee2() {
       return regeneratorRuntime.async(function _callee2$(_context5) {

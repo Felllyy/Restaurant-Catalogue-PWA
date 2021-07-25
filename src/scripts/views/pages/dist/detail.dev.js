@@ -15,7 +15,7 @@ var _reviewUpdate = _interopRequireDefault(require("../../utils/review-update"))
 
 var _favoriteRestaurantIdb = _interopRequireDefault(require("../../data/favorite-restaurant-idb"));
 
-var _templateCreator = require("../templates/template-creator");
+var _templateCreator = _interopRequireDefault(require("../templates/template-creator"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
@@ -26,7 +26,7 @@ var Detail = {
       while (1) {
         switch (_context.prev = _context.next) {
           case 0:
-            return _context.abrupt("return", "\n    <div id=\"detailItem\" class=\"detailblok\"></div>\n    <div id=\"likeButtonContainer\"></div>\n\n    <div id=\"mdl\" class=\"modal\">\n      <form class=\"modal-content\">\n        <h2 class=\"headline\">Tambah Ulasan</h2>\n        <span class=\"close\">&times;</span>\n        <label for=\"inName\">Nama</label>\n        <input name=\"inName\" type=\"text\" class=\"namaReviewer\" id=\"inName\" placeholder=\"Masukkan nama\">\n        <label for=\"inReview\">Ulasan</label>\n        <textarea name=\"inReview\" class=\"isiReview\" id=\"inReview\" placeholder=\"Tambahkan review\"></textarea>\n        <button type=\"submit\" class=\"btnSubmit\">Kirim</button>\n      </form>\n    </div>\n    </div>\n    <div id=\"review\" class=\"reviewblok\"></div>\n    ");
+            return _context.abrupt("return", "\n    <div id=\"detailItem\" class=\"detailblok\"></div>\n    <div id=\"likeButtonContainer\"></div>\n\n    <div id=\"mdl\" class=\"modal\">\n      <form class=\"modal-content\">\n        <h2 class=\"headline\">Tambah Ulasan</h2>\n        <span class=\"close\">&times;</span>\n        <label for=\"inName\">Nama</label>\n        <input name=\"inName\" type=\"text\" class=\"namaReviewer\" id=\"inName\" placeholder=\"Masukkan nama\">\n        <label for=\"inReview\">Ulasan</label>\n        <textarea name=\"inReview\" class=\"isiReview\" id=\"inReview\" placeholder=\"Tambahkan review\"></textarea>\n        <button type=\"submit\" class=\"btnSubmit\">Kirim</button>\n      </form>\n    </div>\n    <div id=\"review\" class=\"reviewblok\"></div>\n    ");
 
           case 1:
           case "end":
@@ -49,7 +49,7 @@ var Detail = {
           case 3:
             restaurantDetail = _context2.sent;
             detailContainer = document.querySelector('#detailItem');
-            detailContainer.innerHTML = (0, _templateCreator.createRestaurantsDetailTemplate)(restaurantDetail.restaurant);
+            detailContainer.innerHTML = _templateCreator["default"].createRestaurantsDetailTemplate(restaurantDetail.restaurant);
             categoriContainer = document.querySelector('#categori');
             restaurantDetail.restaurant.categories.forEach(function (restaurant) {
               categoriContainer.innerHTML += "<p>".concat(restaurant.name, "</p>");
@@ -71,7 +71,7 @@ var Detail = {
 
             reviewContainer = document.querySelector('#review');
             restaurantDetail.restaurant.customerReviews.forEach(function (restaurant) {
-              reviewContainer.innerHTML += (0, _templateCreator.createRestaurantsReviewTemplate)(restaurant);
+              reviewContainer.innerHTML += _templateCreator["default"].createRestaurantsReviewTemplate(restaurant);
             }); // css grid review
 
             if (restaurantDetail.restaurant.customerReviews.length == 1) {

@@ -1,26 +1,30 @@
-/* eslint-disable import/no-unresolved */
-/* eslint-disable import/extensions */
-require('regenerator-runtime');
+"use strict";
 
-require('../styles/style.css');
+require("regenerator-runtime");
 
-require('../styles/responsive.css');
+require("../styles/style.css");
 
-const _app = _interopRequireDefault(require('./views/app'));
+require("../styles/responsive.css");
 
-const _swRegister = _interopRequireDefault(require('./utils/sw-register'));
+require("lazysizes");
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+require("lazysizes/plugins/parent-fit/ls.parent-fit");
 
-const app = new _app.default({
+var _app = _interopRequireDefault(require("./views/app"));
+
+var _swRegister = _interopRequireDefault(require("./utils/sw-register"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+
+var app = new _app["default"]({
   button: document.querySelector('#hamburgerButton'),
   drawer: document.querySelector('.mainNav'),
-  content: document.querySelector('#mainContent'),
+  content: document.querySelector('#mainContent')
 });
-window.addEventListener('hashchange', () => {
+window.addEventListener('hashchange', function () {
   app.renderPage();
 });
-window.addEventListener('load', () => {
+window.addEventListener('load', function () {
   app.renderPage();
-  (0, _swRegister.default)();
+  (0, _swRegister["default"])();
 });

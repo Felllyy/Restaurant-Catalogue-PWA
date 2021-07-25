@@ -51,7 +51,6 @@ var Favorite = {
 
           case 4:
             favoriteRestaurants = _context2.sent;
-            console.log(favoriteRestaurants);
             restaurantContainer = document.querySelector('.favorite'); // grid favorite
 
             if (favoriteRestaurants.length <= 2) {
@@ -61,7 +60,7 @@ var Favorite = {
             } // Fungsi ini akan dipanggil setelah render()
 
 
-          case 8:
+          case 7:
           case "end":
             return _context2.stop();
         }
