@@ -1,0 +1,66 @@
+/* Navbar */
+header {
+    width: 100%;
+    position: fixed;
+    z-index: 110;
+}
+
+nav {
+    background-color: #830E0E;
+}
+
+nav a {
+    text-decoration: none;
+    color: white;
+}
+
+nav a:hover {
+    color: rgb(71, 46, 46);
+}
+
+.mainNav {
+    display: none;
+    margin: 0 15px;
+}
+
+nav .brand {
+    display: inline-block;
+    font-size: 23px;
+    font-weight: bold;
+    padding: 10px 30px;
+    line-height: 50px;
+}
+
+.mainNav li {
+    list-style-type: none;
+    text-align: center;
+}
+
+.mainNav a {
+    display: block;
+    padding: 10px 15px;
+    line-height: 50px;
+}
+
+.navbar-toggle {
+    background-color: transparent;
+    box-shadow: none;
+    border-style: none;
+    position: absolute;
+    right: 10px;
+    cursor: pointer;
+    color: white;
+    font-size: 15px;
+    line-height: 50px;
+    padding: 10px 20px;
+    z-index: 150;
+}
+
+.navbar-toggle:hover {
+    color: rgb(71, 46, 46);
+}
+
+.active {
+    display: block;
+    transition: height 0.4 ease;
+}

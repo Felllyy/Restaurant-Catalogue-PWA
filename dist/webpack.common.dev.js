@@ -110,5 +110,8 @@ module.exports = {
       }
     }],
     overrideExtension: true
-  }), new BundleAnalyzerPlugin(), new MiniCssExtractPlugin()]
+  }), new BundleAnalyzerPlugin({
+    analyzerMode: 'static',
+    openAnalyzer: false
+  }), new MiniCssExtractPlugin()]
 };

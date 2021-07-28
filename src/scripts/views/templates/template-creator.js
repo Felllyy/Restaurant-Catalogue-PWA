@@ -20,7 +20,7 @@ class template {
         </div>
         
         <div class="itemdetail2">
-          <img class="lazyload poster" width="405px" height="270px" data-src="${CONFIG.BASE_IMAGE_URL + restaurant.pictureId}" alt="${restaurant.name}" />
+          <img class="lazyload poster" width="auto" height="auto" data-src="${CONFIG.BASE_IMAGE_URL + restaurant.pictureId}" alt="${restaurant.name}" />
         </div>
 
         <div class="itemdetail3">
@@ -59,7 +59,9 @@ class template {
               <source type="image/jpeg" media="(max-width: 600px)" srcset="./images/user.jpg">
               <img class="lazyload"
                 data-src='./images/user.jpg' 
-                alt="Gambar pengguna">
+                alt="Gambar pengguna"
+                width="auto"
+                height="auto">
               </img>
             </picture>
             </div>
@@ -79,7 +81,7 @@ class template {
     return `
     <div class="resto-item">
               <div class="foto-blok">
-                <img class="lazyload foto" width="405px" height="270px" data-src="${CONFIG.BASE_IMAGE_URL + restaurants.pictureId}" alt="${restaurants.name || '-'}" />
+                <img class="lazyload foto" width="auto" height="auto" data-src="${CONFIG.BASE_IMAGE_URL + restaurants.pictureId}" alt="${restaurants.name || '-'}" />
                 <div class="kota">
                     <span>${restaurants.city || '-'}</span>
                 </div>

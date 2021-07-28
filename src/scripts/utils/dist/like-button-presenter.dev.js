@@ -1,17 +1,16 @@
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
+Object.defineProperty(exports, '__esModule', {
+  value: true,
 });
-exports["default"] = void 0;
+exports.default = void 0;
 
-var _templateCreator = _interopRequireDefault(require("../views/templates/template-creator"));
+var _templateCreator = _interopRequireDefault(require('../views/templates/template-creator'));
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var LikeButtonPresenter = {
   init: function init(_ref) {
-    var likeButtonContainer, favoriteRestaurants, restaurant;
+    var likeButtonContainer; var favoriteRestaurants; var
+      restaurant;
     return regeneratorRuntime.async(function init$(_context) {
       while (1) {
         switch (_context.prev = _context.next) {
@@ -24,7 +23,7 @@ var LikeButtonPresenter = {
             return regeneratorRuntime.awrap(this._renderButton());
 
           case 6:
-          case "end":
+          case 'end':
             return _context.stop();
         }
       }
@@ -55,7 +54,7 @@ var LikeButtonPresenter = {
             this._renderLike();
 
           case 8:
-          case "end":
+          case 'end':
             return _context2.stop();
         }
       }
@@ -72,10 +71,10 @@ var LikeButtonPresenter = {
 
           case 2:
             restaurant = _context3.sent;
-            return _context3.abrupt("return", !!restaurant);
+            return _context3.abrupt('return', !!restaurant);
 
           case 4:
-          case "end":
+          case 'end':
             return _context3.stop();
         }
       }
@@ -84,51 +83,47 @@ var LikeButtonPresenter = {
   _renderLike: function _renderLike() {
     var _this = this;
 
-    this._likeButtonContainer.innerHTML = _templateCreator["default"].createLikeRestaurantButtonTemplate();
+    this._likeButtonContainer.innerHTML = _templateCreator.default.createLikeRestaurantButtonTemplate();
     var likeButton = document.querySelector('#likeButton');
-    likeButton.addEventListener('click', function _callee() {
-      return regeneratorRuntime.async(function _callee$(_context4) {
-        while (1) {
-          switch (_context4.prev = _context4.next) {
-            case 0:
-              _context4.next = 2;
-              return regeneratorRuntime.awrap(_this._favoriteRestaurants.putRestaurant(_this._restaurant));
+    likeButton.addEventListener('click', () => regeneratorRuntime.async((_context4) => {
+      while (1) {
+        switch (_context4.prev = _context4.next) {
+          case 0:
+            _context4.next = 2;
+            return regeneratorRuntime.awrap(_this._favoriteRestaurants.putRestaurant(_this._restaurant));
 
-            case 2:
-              _this._renderButton();
+          case 2:
+            _this._renderButton();
 
-            case 3:
-            case "end":
-              return _context4.stop();
-          }
+          case 3:
+          case 'end':
+            return _context4.stop();
         }
-      });
-    });
+      }
+    }));
   },
   _renderLiked: function _renderLiked() {
     var _this2 = this;
 
-    this._likeButtonContainer.innerHTML = _templateCreator["default"].createUnlikeRestaurantButtonTemplate();
+    this._likeButtonContainer.innerHTML = _templateCreator.default.createUnlikeRestaurantButtonTemplate();
     var likeButton = document.querySelector('#likeButton');
-    likeButton.addEventListener('click', function _callee2() {
-      return regeneratorRuntime.async(function _callee2$(_context5) {
-        while (1) {
-          switch (_context5.prev = _context5.next) {
-            case 0:
-              _context5.next = 2;
-              return regeneratorRuntime.awrap(_this2._favoriteRestaurants.deleteRestaurant(_this2._restaurant.id));
+    likeButton.addEventListener('click', () => regeneratorRuntime.async((_context5) => {
+      while (1) {
+        switch (_context5.prev = _context5.next) {
+          case 0:
+            _context5.next = 2;
+            return regeneratorRuntime.awrap(_this2._favoriteRestaurants.deleteRestaurant(_this2._restaurant.id));
 
-            case 2:
-              _this2._renderButton();
+          case 2:
+            _this2._renderButton();
 
-            case 3:
-            case "end":
-              return _context5.stop();
-          }
+          case 3:
+          case 'end':
+            return _context5.stop();
         }
-      });
-    });
-  }
+      }
+    }));
+  },
 };
 var _default = LikeButtonPresenter;
-exports["default"] = _default;
+exports.default = _default;

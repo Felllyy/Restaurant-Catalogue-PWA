@@ -1,5 +1,3 @@
-/* eslint-disable import/no-unresolved */
-/* eslint-disable import/extensions */
 require('regenerator-runtime');
 
 const _cacheHelper = _interopRequireDefault(require('./utils/cache-helper'));

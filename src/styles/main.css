@@ -1,0 +1,209 @@
+* {
+    font-family: "Noto Serif JP", serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html {
+    overflow-x: hidden;
+    height: 100%;
+}
+
+body {
+    width: 100%;
+}
+
+img {
+    display: block;
+}
+
+/* aksesibilitas */
+div[tabindex="0"]:focus {
+    outline: 1px solid rgb(240, 173, 29);
+    z-index: 4;
+}
+/* content favorite*/
+.favorite {
+    margin: 0 20px;
+}
+.caribox {
+    display: block;
+    background-color: transparent;
+    border: 1px solid #830E0E;
+    border-radius: 5px;
+    padding: 5px;
+    margin: 0 auto;
+    margin-bottom: 20px;
+}
+
+.caribox::placeholder {
+    color: rgb(83, 83, 83);
+}
+.content {
+    padding-top: 100px;
+}
+.content__heading {
+    padding: 20px 0 15px 0;
+    font-size: 25px;
+    font-weight: bold;
+    text-align: center;
+    color: #830E0E;
+}
+
+/* skip to content */
+.skip-link {
+    text-decoration: none;
+    position: absolute;
+    left: 44%;
+    background-color: #bf1722;
+    color: white;
+    padding: 8px;
+    z-index: 120;
+    transform: translateY(-100%);
+    transition: transform 0.3s;
+}
+
+.skip-link:focus {
+    transform: translateY(0%);
+}
+
+/* jumbotron */
+.jumbotron {
+    width: 100%;
+    height: 650px;
+    overflow: hidden;
+    background-size: cover;
+    position: relative;
+}
+.jumbotron img {
+    width: 100%;
+}
+
+.bluring {
+    width: 100%;
+    padding: 100%;
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.tekstron {
+    color: white;
+    width: 100%;
+    text-align: center;
+    position: absolute;
+    top: 40%;
+    z-index: 20;
+    font-size: 23px;
+}
+
+.tekstron h1 {
+    line-height: 50px;
+}
+
+.tekstron p {
+    margin-top: 10px;
+}
+
+.tekstron .cari {
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    padding: 15px 30px;
+    color: black;
+    background-color: #f0ad1d;
+    border-radius: 4px;
+    line-height: 26px;
+    margin-top: 40px;
+    cursor: pointer;
+    border-color: #f8ce0b;
+}
+
+.tekstron .cari:hover {
+    background-color: #c58c0f;
+    border-color: #c58c0f;
+}
+
+.diactive {
+    display: none;
+}
+
+/* explore */
+.headline {
+    padding: 50px 0;
+    font-size: 25px;
+    font-weight: bold;
+    text-align: center;
+    color: #830E0E;
+}
+.restoblok {
+    padding-bottom: 5px;
+}
+.item {
+    display: inline-block;
+    margin-top: 20px;
+}
+.explore {
+    margin: 0 20px 20px;
+}
+
+.resto-item {
+    margin-bottom: 30px;
+}
+
+.foto-blok {
+    position: relative;
+}
+
+.foto {
+    width: 100%;
+    height: 230px;
+    border: 1px solid rgb(128, 32, 32);
+}
+
+.kota {
+    position: absolute;
+    color: white;
+    background-color: rgba(165, 42, 42);
+    padding: 5px 15px;
+    top: 15px;
+}
+
+.deskripsi {
+    text-align: justify;
+    padding: 10px;
+}
+
+.rate {
+    margin: 5px 0;
+    font-size: 17px;
+}
+
+.rate span {
+    text-decoration: none;
+    color: #830E0E;
+}
+
+.name {
+    display: inline-block;
+    color: #830E0E;
+    text-decoration: none;
+    font-size: 23px;
+    font-weight: bold;
+    line-height: 50px;
+}
+
+.desc {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 5;
+    -webkit-box-orient: vertical;
+}
+
+/* footer */
+.copy {
+    padding: 20px 0;
+    margin: 0 auto;
+    text-align: center;
+    background-color: rgb(240, 173, 29);
+}

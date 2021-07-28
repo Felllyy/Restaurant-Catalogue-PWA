@@ -1,5 +1,8 @@
 import 'regenerator-runtime';
-import '../styles/style.css';
+import '../styles/main.css';
+import '../styles/css-grid.css';
+import '../styles/detail.css';
+import '../styles/navbar.css';
 import '../styles/responsive.css';
 import 'lazysizes';
 import 'lazysizes/plugins/parent-fit/ls.parent-fit';

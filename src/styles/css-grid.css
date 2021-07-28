@@ -1,0 +1,52 @@
+/* css grid */
+.grid-container {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-template-rows: auto auto;
+    row-gap: 10px;
+    column-gap: 20px;
+    justify-content: center;
+}
+
+.grid-container-favorite {
+    display: grid;
+    grid-template-columns: 400px 400px;
+    grid-template-rows: auto auto;
+    row-gap: 10px;
+    column-gap: 20px;
+}
+
+.grid-container-detail {
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-rows: auto auto;
+    row-gap: 10px;
+    column-gap: 20px;
+}
+
+.grid-container-review {
+    display: grid;
+    grid-template-columns: 300px 300px 300px;
+    grid-template-rows: auto auto;
+    row-gap: 10px;
+    column-gap: 20px;
+    justify-content: center;
+}
+
+.grid-container-satu {
+    display: grid;
+    grid-template-columns: 300px;
+    grid-template-rows: auto;
+    row-gap: 10px;
+    column-gap: 20px;
+    justify-content: center;
+}
+
+.grid-container-dua {
+    display: grid;
+    grid-template-columns: 300px 300px;
+    grid-template-rows: auto auto;
+    row-gap: 10px;
+    column-gap: 20px;
+    justify-content: center;
+}

@@ -9,11 +9,9 @@ const Home = {
         <picture>
           <source type="image/webp" media="(max-width: 600px)" srcset="./images/hero-image_2.webp">
           <source type="image/jpeg" media="(max-width: 600px)" srcset="./images/hero-image_2.jpg">
-          <img class="lazyload"
+          <img class="lazyload" id="imghero"
             data-src='./images/hero-image_2.jpg' 
-            alt="Gambar jumbotron"
-            width="1350px"
-            height="900px">
+            alt="Gambar jumbotron">
           </img>
         </picture>
         <div class="tekstron">

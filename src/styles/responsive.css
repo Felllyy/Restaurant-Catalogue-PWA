@@ -104,6 +104,9 @@
         grid-template-columns: auto;
         justify-content: center;
     }
+    .grid-container-review {
+        display: block;
+    }
     .tekstron {
         margin-left: 30px;
         text-align: left;
@@ -117,7 +120,7 @@
         margin-left: 2px;
     }
 
-    .jumbotron img {
+    .jumbotron picture img {
         height: 100%;
     }
 
@@ -125,7 +128,7 @@
         height: 100%;
     }
     .detailblok {
-        padding: 40px 20px;
+        padding: 40px 0;
     }
     .poster {
         width: 80%;

@@ -7,14 +7,15 @@ Before(({ I }) => {
   I.amOnPage('/#/favorite');
 });
 
+const emptyFavRest = 'Tidak ada restoran untuk ditampilkan';
+
 Scenario('showing empty liked restaurants', ({ I }) => {
   I.seeElement('#query');
-  // I.seeElement('.query'); // membuat test menjadi gagal
-  I.see('Tidak ada restoran untuk ditampilkan', '.resto-item__not__found');
+  I.see(emptyFavRest, '.resto-item__not__found');
 });
 
 Scenario('liking one restaurant', async ({ I }) => {
-  I.see('Tidak ada restoran untuk ditampilkan', '.resto-item__not__found');
+  I.see(emptyFavRest, '.resto-item__not__found');
 
   I.amOnPage('/');
 
@@ -32,6 +33,36 @@ Scenario('liking one restaurant', async ({ I }) => {
   const likedRestaurantName = await I.grabTextFrom('.restaurant__name');
 
   assert.strictEqual(firstRestaurantName, likedRestaurantName);
+});
+
+Scenario('unliking one restaurant', async ({ I }) => {
+  I.see(emptyFavRest, '.resto-item__not__found');
+
+  I.amOnPage('/');
+
+  I.seeElement('.restaurant__name a');
+
+  const firstRestaurant = locate('.restaurant__name a').first();
+  const firstRestaurantName = await I.grabTextFrom(firstRestaurant);
+  I.click(firstRestaurant);
+
+  I.seeElement('#likeButton');
+  I.click('#likeButton');
+
+  I.amOnPage('/#/favorite');
+  I.seeElement('.resto-item');
+  const likedRestaurantName = await I.grabTextFrom('.restaurant__name');
+  assert.strictEqual(firstRestaurantName, likedRestaurantName);
+
+  I.click(likedRestaurantName);
+
+  I.seeElement('#likeButton');
+  I.click('#likeButton');
+
+  I.amOnPage('/#/favorite');
+  const noFavRest = await I.grabTextFrom('.resto-item__not__found');
+
+  assert.strictEqual(noFavRest, emptyFavRest);
 });
 
 Scenario('searching restaurants', async ({ I }) => {
