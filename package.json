@@ -37,7 +37,7 @@
     "karma-webpack": "^4.0.2",
     "mini-css-extract-plugin": "^1.6.2",
     "puppeteer": "^10.1.0",
-    "sharp": "^0.28.3",
+    "sharp": "^0.30.5",
     "style-loader": "^2.0.0",
     "uglifyjs-webpack-plugin": "^2.2.0",
     "webpack": "^4.46.0",
@@ -49,6 +49,7 @@
     "workbox-webpack-plugin": "^6.1.5"
   },
   "dependencies": {
+    "cypress": "^9.7.0",
     "idb": "^6.1.2",
     "lazysizes": "^5.3.2",
     "regenerator-runtime": "^0.13.7",
