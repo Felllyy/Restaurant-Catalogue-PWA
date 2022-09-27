@@ -1,4 +1,4 @@
-# Restaurant-Catalogue-PWA
+# Restaurant Catalogue  with PWA
 
 [![NodeJS with Webpack](https://github.com/hadiindrawan/Restaurant-Catalogue-PWA/actions/workflows/test.yml/badge.svg?branch=main)](https://github.com/hadiindrawan/Restaurant-Catalogue-PWA/actions/workflows/test.yml)
 
@@ -39,4 +39,5 @@ Clone this repository to your local computer
  ```sh
  npm run e2e
  ```
+ 
 
