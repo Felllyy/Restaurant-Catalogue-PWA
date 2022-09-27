@@ -39,4 +39,4 @@ Clone this repository to your local computer
  ```sh
  npm run e2e
  ```
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
